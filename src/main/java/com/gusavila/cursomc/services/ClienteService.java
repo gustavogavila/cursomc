@@ -15,7 +15,7 @@ public class ClienteService {
 	@Autowired
 	private ClienteRepository repo;
 
-	public Cliente buscar(Integer id) {
+	public Cliente find(Integer id) {
 		Optional<Cliente> optional = repo.findById(id);
 		return optional.orElseThrow(() -> new ObjetoNaoEncontradoException(
 				"Objeto não encontrado! Id: " + id + ", Tipo: " + Cliente.class.getName()));
